@@ -7,7 +7,7 @@ type DataTableProp = {
 const DataTable = (props: DataTableProp) => {
     const { dataframe } = props;
     return (
-        <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-300">
+        <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-300 mb-16">
             <div dangerouslySetInnerHTML={{ __html: dataframe.table }} />
         </div>
     )

@@ -1,3 +1,4 @@
+import DF_Nav from '@/components/DF_Nav';
 import DataTable from '@/components/DataTable';
 import Select from '@/components/Select';
 import React, { useEffect, useState } from 'react';
@@ -13,10 +14,9 @@ const DataType = () => {
         }
     }, []);
     return (
-        dataframe && <div>
-            <h1>Change Datatype</h1>
-            <div dangerouslySetInnerHTML={{ __html: dataframe["datatype_table"] }} />
-            <form onSubmit={(e: any) => {
+        dataframe && <div className='h-full min-h-screen p-4 bg-gradient-to-r from-teal-900 to-emerald-800'>
+            <DF_Nav />
+            <form className='flex flex-row gap-4' onSubmit={(e: any) => {
                 e.preventDefault();
                 const column = e.target[0].value;
                 const datatype = e.target[1].value;
@@ -25,7 +25,7 @@ const DataType = () => {
                 formData.append('datatype', datatype);
                 formData.append('action', 'change_datatype');
                 formData.append('data', JSON.stringify(dataframe.data));
-
+                
                 fetch('/api/advance_cleaning', {
                     method: 'POST',
                     body: formData
@@ -40,10 +40,12 @@ const DataType = () => {
                     alert("Error changing datatype");
                 });
             }}>
+                <h1>Change Datatype</h1>
                 <Select data={dataframe.columns} text="Select Column" />
                 <Select data={["int", "float", "object"]} text="Select Datatype" />
                 <button className='btn btn-primary' type='submit'>Change</button>
             </form>
+            <div className='mb-16 max-w-4xl' dangerouslySetInnerHTML={{ __html: dataframe["datatype_table"] }} />
         </div>
     )
 }

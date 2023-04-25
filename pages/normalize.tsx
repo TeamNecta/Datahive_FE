@@ -1,3 +1,4 @@
+import DF_Nav from '@/components/DF_Nav';
 import DataTable from '@/components/DataTable';
 import Select from '@/components/Select';
 import React, { useEffect, useState } from 'react'
@@ -13,17 +14,16 @@ const Normalize = () => {
         }
     }, []);
   return (
-    dataframe && <div>
-        <h1>Normalize</h1>
-        <DataTable dataframe={dataframe} />
-        <form onSubmit={(e: any) => {
+    dataframe && <div className='h-full min-h-screen p-4 bg-gradient-to-r from-teal-900 to-emerald-800'>
+        <DF_Nav />
+        <form className='flex flex-row gap-4 mt-4' onSubmit={(e: any) => {
             e.preventDefault();
             const column = e.target[0].value;
             const formData = new FormData();
             formData.append('column', column);
             formData.append('action', 'normalize_data');
             formData.append('data', JSON.stringify(dataframe.data));
-
+            
             fetch('/api/advance_cleaning', {
                 method: 'POST',
                 body: formData
@@ -38,9 +38,11 @@ const Normalize = () => {
                 alert("Error normalizing data");
             });
         }}> 
+            <h1>Normalize</h1>
             <Select data={dataframe.columns} text="Select Column" />
             <button className='btn btn-primary' type='submit'>Normalize</button>
         </form>
+        <DataTable dataframe={dataframe} />
     </div>
   )
 }

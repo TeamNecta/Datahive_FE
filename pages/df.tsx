@@ -1,6 +1,7 @@
 import DataTable from '@/components/DataTable';
 import React, { useEffect, useState } from 'react';
 import Select from '@/components/Select';
+import DF_Nav from '@/components/DF_Nav';
 
 const DF = () => {
     const [dataframe, setDataframe] = useState<any>(null)
@@ -13,12 +14,9 @@ const DF = () => {
         }
     }, []);
     return (
-        <div className='p-4 bg-gradient-to-r from-teal-900 to-emerald-800'>
-            <h1 className='text-6xl'>
-                Data
-            </h1>
+        <div className='h-full min-h-screen p-4 bg-gradient-to-r from-teal-900 to-emerald-800'>
+            <DF_Nav />
             {dataframe ? (<>
-                <DataTable dataframe={dataframe} />
                 <form className='px-4 my-2 space-y-2' onSubmit={(e: any) => {
                     e.preventDefault();
                     const column = e.target[0].value;
@@ -28,7 +26,7 @@ const DF = () => {
                     formData.append('replace_method', method);
                     formData.append('action', 'replace_missing');
                     formData.append('data', JSON.stringify(dataframe.data));
-
+                    
                     fetch('/api/advance_cleaning', {
                         method: 'POST',
                         body: formData
@@ -42,15 +40,23 @@ const DF = () => {
                     }).catch((err) => {
                         alert("Error replacing missing values");
                     });
-
+                    
                 }}>
-                    <h1>Replace missing values</h1>
-                    <div className='flex gap-4'>
-                        <Select data={dataframe.columns} text="Select Column" />
-                        <Select data={["mean", "freq", "deleteRow"]} text="Select Method" />
+                        <h1 className='text-6xl'>
+                            Data
+                        </h1>
+                    <div className="flex flex-row gap-4">
+                        <h1>Replace missing values</h1>
+                        <div className='flex flex-row gap-4'>
+                            <div className='flex gap-4'>
+                                <Select data={dataframe.columns} text="Select Column" />
+                                <Select data={["mean", "freq", "deleteRow"]} text="Select Method" />
+                            </div>
+                            <button className='btn btn-accent'>Replace</button>
+                        </div>
                     </div>
-                    <button className='btn btn-primary'>Replace</button>
                 </form>
+                    <DataTable dataframe={dataframe} />
             </>
 
             ) : <div>Loading</div>}

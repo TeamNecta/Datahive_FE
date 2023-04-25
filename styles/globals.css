@@ -57,7 +57,6 @@ table tr:hover td {
   @apply bg-gray-800;
 }
 
-/* Add table styles from daisyui */
 table tr:hover td:first-child {
   @apply rounded-l;
 }
