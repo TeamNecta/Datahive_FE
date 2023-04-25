@@ -17,7 +17,7 @@ const visualize = () => {
         }
     }, []);
     return (
-        dataframe && <div className='flex flex-col gap-6'>
+        dataframe && <div className='flex flex-col gap-6 container p-4\8 mx-auto'>
             <h1>Visualize</h1>
             <form onSubmit={(e: any) => {
                 if (!dataframe) return;
