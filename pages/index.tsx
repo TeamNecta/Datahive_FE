@@ -8,11 +8,17 @@ export default function Home() {
   const router = useRouter();
   return (
     <main
-      className={`container mx-auto min-h-screen ${inter.className} bg-gradient-to-r from-purple-600 to-blue-600`}
+      className={`container p-4 mx-auto min-h-screen ${inter.className} bg-gradient-to-r from-purple-600 to-blue-600`}
 
     >
       <div className='h-screen flex flex-col items-center justify-center gap-4'>
-        <h1 className='text-6xl font-extrabold p-4'>Welcome to DataHive. Start by uploading your file</h1>
+        
+          
+          <h1 className='text-6xl font-extrabold p-4'>Welcome to DataHive. <br /><span className="flex flex-row gap-4">Start by uploading your file <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-16 h-16 animate-bounce">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 10.5v6m3-3H9m4.06-7.19l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+          </svg></span></h1>
+          
+
         <input type="file" className="file-input file-input-bordered file-input-primary w-full max-w-xs" 
         onChange={(e) => {
           if (e.target.files) {
