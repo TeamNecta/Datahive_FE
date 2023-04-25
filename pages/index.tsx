@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import FeatureCard from '@/components/FeatureCard'
-import Datacleaning from '@/icons/Datacleaning'
 
 const inter = Inter({ subsets: ['latin'] })
 
