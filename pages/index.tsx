@@ -1,10 +1,11 @@
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import FeatureCard from '@/components/FeatureCard'
+import { useRouter } from 'next/router'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const router = useRouter();
   return (
     <main
       className={`container mx-auto min-h-screen ${inter.className} bg-gradient-to-r from-purple-600 to-blue-600`}
@@ -12,7 +13,25 @@ export default function Home() {
     >
       <div className='h-screen flex flex-col items-center justify-center gap-4'>
         <h1 className='text-6xl font-extrabold p-4'>Welcome to DataHive. Start by uploading your file</h1>
-        <input type="file" className="file-input file-input-bordered file-input-primary w-full max-w-xs" />
+        <input type="file" className="file-input file-input-bordered file-input-primary w-full max-w-xs" 
+        onChange={(e) => {
+          if (e.target.files) {
+            const formData = new FormData();
+            formData.append('file', e.target.files[0]);          
+            fetch('/api/upload', {
+              method: 'POST',
+              body: formData
+            }).then(res => res.json()).then(data => {
+              {/* Store in local storage */}
+              localStorage.setItem('dataframe', JSON.stringify(data));
+              router.push('/df');
+            }).catch(err => {
+              console.log(err)
+            });
+          } else {
+            alert('No file selected');
+          }
+        }} />
       </div>
       <div className='grid place-items-center grid-cols-3 gap-4 p-4'>
         <FeatureCard title="Data Cleaning" description="Clean your data with our data cleaning tool" icon={

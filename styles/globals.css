@@ -25,3 +25,46 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+/* Add table styles from daisyui */
+table {
+  @apply table-auto;
+  @apply w-full;
+  @apply text-left;
+  @apply border-collapse;
+  @apply border border-gray-300;
+  @apply my-4;
+}
+
+/* Add table styles from daisyui */
+table th {
+  @apply border border-gray-300;
+  @apply p-2 rounded-xl;
+  @apply bg-gray-900;
+}
+
+table td {
+  @apply border border-gray-300;
+  @apply p-2 rounded-xl;
+}
+
+
+table tr:hover {
+  @apply bg-gray-800;
+}
+
+table tr:hover td {
+  @apply bg-gray-800;
+}
+
+/* Add table styles from daisyui */
+table tr:hover td:first-child {
+  @apply rounded-l;
+}
+
+h1 {
+  @apply text-4xl;
+  @apply font-bold;
+  @apply mb-4;
+}
+
