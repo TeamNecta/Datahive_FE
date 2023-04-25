@@ -4,14 +4,15 @@ import React from 'react';
 
 interface SelectProps {
     data: any;
+    text: string;
 }
 
-const Select: React.FC<SelectProps> = ({ data }) => {
+const Select: React.FC<SelectProps> = ({ data, text }) => {
     return (
         <div className="overflow-x-auto">
-            <select className="select select-bordered w-full max-w-xs">
-                <option disabled selected>
-                    Select an option
+            <select className="select select-bordered w-full max-w-xs" defaultValue={text}>
+                <option disabled>
+                    {text}
                 </option>
                 {data.map((row: any, i: number) => (
                     <option key={i}>{row}</option>
@@ -20,3 +21,5 @@ const Select: React.FC<SelectProps> = ({ data }) => {
         </div>
     );
 };
+
+export default Select;

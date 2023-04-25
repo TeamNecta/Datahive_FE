@@ -27,14 +27,15 @@ const df = () => {
                     formData.append('replace_column', column);
                     formData.append('replace_method', method);
                     formData.append('action', 'replace_missing');
+                    formData.append('data', JSON.stringify(dataframe.data));
 
                     fetch('/api/advance_cleaning', {
                         method: 'POST',
                         body: formData
                     }).then((res) => res.json()).then((data) => {
                         if (data.data) {
-                            localStorage.setItem('dataframe', JSON.stringify(data.data));
-                            setDataframe(data.data);
+                            localStorage.setItem('dataframe', JSON.stringify(data));
+                            setDataframe(data);
                         } else {
                             alert("Error replacing missing values");
                         }
