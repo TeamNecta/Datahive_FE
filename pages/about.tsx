@@ -13,9 +13,9 @@ const about = () => {
                     Our website is designed to be accessible and user-friendly, with a focus on empowering the general public to analyse and visualize their data. It accepts datasets in any format and generate insights from the data. Additionally, it can train predictive models on the data using scikit-learn, allowing users to make accurate predictions about future trends.
                 </p>
                 <br />
-                The website&aposs interface is simple and user-friendly, allowing users to easily upload their data and navigate through the analysis and visualization tools. Users can choose from a variety of visualization options, including graphs, charts, and maps, to help them better understand their data. Additionally, the website offers customization options, allowing users to tailor the visualizations to their specific needs.
+                <p>The website&aposs interface is simple and user-friendly, allowing users to easily upload their data and navigate through the analysis and visualization tools. Users can choose from a variety of visualization options, including graphs, charts, and maps, to help them better understand their data. Additionally, the website offers customization options, allowing users to tailor the visualizations to their specific needs.</p>
+                <br />
                 <p>
-                    <br />
                     One of the key features of our website is its ability to generate insights and recommendations based on the data. The website&aposs algorithms analyse the data to identify patterns and trends, providing users with valuable information that they can use to make informed decisions.
                 </p>
                 <br />
