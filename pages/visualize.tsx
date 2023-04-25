@@ -12,10 +12,10 @@ const visualize = () => {
         }
     }, []);
   return (
-    <div>
+    dataframe && <div>
         <h1>Visualize</h1>
         <form onSubmit={(e: any) => {
-            
+
         }}>
             <Select data={dataframe.columns} text="X:" />
             <Select data={dataframe.columns} text="Y:" />
