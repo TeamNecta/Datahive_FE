@@ -2,7 +2,7 @@ import DataTable from '@/components/DataTable';
 import Select from '@/components/Select';
 import React, { useEffect, useState } from 'react'
 
-const normalize = () => {
+const Normalize = () => {
     const [dataframe, setDataframe] = useState<any>(null)
     useEffect(() => {
         try {
@@ -45,4 +45,4 @@ const normalize = () => {
   )
 }
 
-export default normalize
+export default Normalize

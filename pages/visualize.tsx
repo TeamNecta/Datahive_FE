@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement, PointElement, LineElement } from 'chart.js';
 import { Bar, Line, Scatter } from 'react-chartjs-2';
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement, PointElement, LineElement);
-const visualize = () => {
+const Visualize = () => {
     const [dataframe, setDataframe] = useState<any>(null);
     const [data, setData] = useState<any>(null);
     const [options, setOptions] = useState<any>(null);
@@ -129,4 +129,4 @@ const visualize = () => {
     )
 }
 
-export default visualize
+export default Visualize

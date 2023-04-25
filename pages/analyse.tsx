@@ -1,6 +1,6 @@
 import React from 'react'
 
-const analyse = () => {
+const Analyse = () => {
   return (
     <div>
         <h1>Analysis</h1>
@@ -9,4 +9,4 @@ const analyse = () => {
   )
 }
 
-export default analyse
+export default Analyse

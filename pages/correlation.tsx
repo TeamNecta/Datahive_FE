@@ -1,7 +1,7 @@
 import Select from '@/components/Select';
 import React, { useEffect, useState } from 'react'
 
-const correlation = () => {
+const Correlation = () => {
     const [dataframe, setDataframe] = useState<any>(null);
     const [corValue, setCorValue] = useState<any>(null);
     useEffect(() => {
@@ -67,4 +67,4 @@ const correlation = () => {
     )
 }
 
-export default correlation
+export default Correlation

@@ -2,7 +2,7 @@ import DataTable from '@/components/DataTable';
 import React, { useEffect, useState } from 'react';
 import Select from '@/components/Select';
 
-const df = () => {
+const DF = () => {
     const [dataframe, setDataframe] = useState<any>(null)
     useEffect(() => {
         try {
@@ -58,4 +58,4 @@ const df = () => {
     )
 }
 
-export default df
+export default DF
