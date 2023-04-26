@@ -14,7 +14,7 @@ const DF = () => {
         }
     }, []);
     return (
-        <div className='h-full min-h-screen p-4 bg-gradient-to-r from-teal-900 to-emerald-800'>
+        <div className='h-full min-h-screen p-4 bg-gradient-to-r from-gray-900 to-slate-800'>
             <DF_Nav />
             {dataframe ? (<>
                 <form className='px-4 my-2 space-y-2' onSubmit={(e: any) => {

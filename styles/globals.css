@@ -39,13 +39,13 @@ table {
 /* Add table styles from daisyui */
 table th {
   @apply border border-gray-300;
-  @apply p-2 rounded-xl;
+  @apply p-2 rounded;
   @apply bg-gray-900;
 }
 
 table td {
   @apply border border-gray-300;
-  @apply p-2 rounded-xl;
+  @apply p-2 rounded;
 }
 
 
@@ -58,7 +58,7 @@ table tr:hover td {
 }
 
 table tr:hover td:first-child {
-  @apply rounded-l;
+  @apply rounded;
 }
 
 h1 {
