@@ -10,7 +10,7 @@ type FeatureCardProp = {
 const FeatureCard = (props: FeatureCardProp) => {
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
-            <figure className="p-2">
+            <figure className="p-3">
                 {props.icon}
             </figure>
             <div className="card-body items-center text-center">

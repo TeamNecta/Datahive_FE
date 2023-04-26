@@ -14,7 +14,7 @@ const Normalize = () => {
         }
     }, []);
   return (
-    dataframe && <div className='h-full min-h-screen p-4 bg-gradient-to-r from-teal-900 to-emerald-800'>
+    dataframe && <div className='h-full min-h-screen p-4 bg-gradient-to-r from-gray-900 to-slate-800'>
         <DF_Nav />
         <form className='flex flex-row gap-4 mt-4' onSubmit={(e: any) => {
             e.preventDefault();

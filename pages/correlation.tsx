@@ -13,7 +13,7 @@ const Correlation = () => {
         }
     }, []);
     return (
-        dataframe && <div className='container mx-auto p-8 h-full min-h-screen bg-gradient-to-r from-teal-900 to-emerald-800'>
+        dataframe && <div className='container mx-auto p-8 h-full min-h-screen bg-gradient-to-r from-gray-900 to-slate-800'>
             <form className='w-full max-w-lg flex flex-row gap-4' onSubmit={(e: any) => {
                 e.preventDefault();
                 const column = e.target[0].value;
