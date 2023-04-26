@@ -10,7 +10,7 @@ interface SelectProps {
 const Select: React.FC<SelectProps> = ({ data, text }) => {
     return (
         <div className="overflow-x-auto">
-            <select className="select select-bordered w-full max-w-xs" defaultValue={text}>
+            <select className="select select-bordered w-full text-lg min-w-fit" defaultValue={text}>
                 <option disabled>
                     {text}
                 </option>
